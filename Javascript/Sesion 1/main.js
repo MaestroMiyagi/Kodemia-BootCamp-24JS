@@ -3,11 +3,11 @@ let num1 = 4;
 let num2 = 8;
 
 if (num1 > num2) {
-  console.log(num1);
+  console.log(`El número mayor es ${num1}`);
 } else if (num1 < num2) {
-  console.log(num2);
+    console.log(`El número mayor es ${num2}`);
 } else {
-  console.log("Los numero son iguales");
+  console.log("Los números son iguales");
 }
 
 /* Programa 2 Crear un programa que me muestre el más largo de dos strings*/
@@ -18,9 +18,9 @@ let length1= string1.length;
 let length2= string2.length;
 
 if (length1 > length2) {
-  console.log(string1);
+  console.log(`La cadena de caracteres más larga es "${string1}"`);
 } else if (length1 < length2) {
-  console.log(string2);
+  console.log(`La cadena de caracteres más larga es "${string2}"`);
 } else {
   console.log("Las cadenas de caracteres tienen la misma longitud");
 }
