@@ -57,11 +57,11 @@ console.log(`El resultado de la division entre ${div1} y ${div2} es ${division(d
 /* Crear una fución que reciba el nombre de alguna operación aritmética, y 2 números, debe devolver el resultado de la operación aritmética indicada, entre los dos números recibidos*/
 
 let num1 = 2
-let num2 = 0
-let result
-let operation = 'division'
+let num2 = 4
+let operation = 'multiplicacion'
 
 function math(num1,num2,operation){
+    let result
     switch (operation) {
         case 'suma':
             result = num1 + num2
