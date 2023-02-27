@@ -13,7 +13,8 @@ console.log(`${palindrome(phrase)}`)
 
 /* Ejercicio 2 */
 function capitalLetters(phrase) {
-    return phrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    phrase = phrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return phrase
 }
 console.log(`${capitalLetters(phrase)}`)
 
@@ -31,3 +32,4 @@ function longest(phrase) {
 console.log(`${longest(phrase)}`)
 
 /* Ejercicio 4 */
+console.log(`Es poco, pero es trabajo honesto :^)`)
