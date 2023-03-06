@@ -293,3 +293,26 @@ let resultList = productsList(products)
 
 /* 4.- Crear una función que me devuelva la lista de productos ordenada de menor a mayor el precio */
 
+/* 6.- Crear una función que me devuelva el conteo total de votos de toda la lista de productos */
+
+const totalVotes = (products) =>{
+  let sumVotes = 0
+  products.forEach(product => {
+    sumVotes += product.rating.count
+    })
+    return sumVotes
+}
+
+console.log(`Los votos totales fueron = ${totalVotes(products)}`)
+
+/* 7.- Crear una función que me devuelva el rating promedio todos mis productos */
+
+const averageRating =(products) =>{
+  let sumRating = 0
+  products.forEach(product => {
+    sumRating += product.rating.rate
+    })
+    return sumRating / products.length
+}
+
+console.log(`El rating promedio de todos mis productos es = ${averageRating(products)}`)
