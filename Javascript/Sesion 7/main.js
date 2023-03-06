@@ -280,8 +280,10 @@ console.log(ratingResult) */
         "El producto {nombre} tiene un costo de {costo}"
     ] */
 
-    function comparar ( a, b ){ return a - b; }
-    
+function comparar(a, b) {
+  return a - b;
+}
+
 const productsList = (arrayProducts) => {
   let result = arrayProducts.map(item => {
     return `El producto "${item.title}" tiene un costo de $${item.price}`
@@ -295,24 +297,35 @@ let resultList = productsList(products)
 
 /* 6.- Crear una función que me devuelva el conteo total de votos de toda la lista de productos */
 
-const totalVotes = (products) =>{
+const totalVotes = (products) => {
   let sumVotes = 0
   products.forEach(product => {
     sumVotes += product.rating.count
-    })
-    return sumVotes
+  })
+  return sumVotes
 }
 
 console.log(`Los votos totales fueron = ${totalVotes(products)}`)
 
 /* 7.- Crear una función que me devuelva el rating promedio todos mis productos */
 
-const averageRating =(products) =>{
+const averageRating = (products) => {
   let sumRating = 0
   products.forEach(product => {
     sumRating += product.rating.rate
-    })
-    return sumRating / products.length
+  })
+  return sumRating / products.length
 }
 
 console.log(`El rating promedio de todos mis productos es = ${averageRating(products)}`)
+
+/* 8.- Crear una función que me devuelva los 5 productos más costosos de la lista */
+
+/* 9.- Crear una función que me devuelva todos los productos de una categoría específica */
+
+const categoryFinder = (products, filterOption) => {
+  let result = products.filter(products => products.category === filterOption)
+  return result
+}
+
+console.log(categoryFinder(products, "women's clothing"))
