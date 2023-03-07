@@ -224,15 +224,11 @@ console.log(resultGender)
 
 /* 5.-Obtener las personas que incluyan en su nombre el texto que se indique */
 
-const filterName = (arrayFullNames, search) => {
-    let result = arrayFullNames.map(item => item.name)
-    let results = result.map(item => {
-        return `${item.title} ${item.first} ${item.last}`
-    })
-    let searchName = results.filter(names => names === search)
-    console.log(searchName)
-    return searchName
+const filterName = (search) => {
+    return people.filter(persona =>
+        `${persona.name.first} ${persona.name.last}`.toLowerCase().includes(search.toLowerCase())
+      );
 }
 
-let resultSearch = filterName(people, "Mr Pimen Dreveckiy")
+let resultSearch = filterName("pim")
 console.log(resultSearch)
