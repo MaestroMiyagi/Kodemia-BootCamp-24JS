@@ -2,12 +2,10 @@
 
 1. Tomamos la lista de koders
 2. Esta lista incluye el nombre y la fecha de nacimiento
-3. Recorrer la lista y transformamos la fecha a año
-4. acomodamos los koders de mayor a menor o viceversa
-5. Tomamos el primer y último valor de la lista
-6. Usamos getYear para extraer el año
-7. Comparamos las fechas de los dos koders usando el año y guardamos el resultado en otra variable
-8. Regresamos el valor de la diferencia de los años de los koders comparados
+3. Recorrer la lista y transformamos la fecha a un numero y extraemos el año
+4. En nuestro nuevo array obtenemos el valor minimo y maximo usando las funciones Math
+5. Comparamos las fechas de los dos koders usando el valor maximo y minimo
+6. Regresamos el valor de la diferencia de los años de los koders comparados
 
 ## Planeación Tarea
 
