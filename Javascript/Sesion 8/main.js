@@ -40,10 +40,27 @@ koders = [{
 }]
 
 const getAgeDifference = (koders) => {
-    let birthYears = koders.map((koder) => parseInt(koder.birthDate.split('/')[2]));
-    let ageDifference = Math.max(...birthYears) -Math.min(...birthYears);
+    let birthYears = koders.map((koder) => parseInt(koder.birthDate.split("/")[2]));
+    let ageDifference = Math.max(...birthYears) - Math.min(...birthYears);
     return ageDifference;
   }
 
 
 console.log(`La diferencia de años entre el koder más verde y el más experimentado es de ${getAgeDifference(koders)} años`);
+
+/* Usando la lista de nombres y fechas de nacimiento de los koders, se requiere obtener una nueva lista que 
+contenga el nombre del koder y el tiempo que falta para su cumpleaños (en días y meses), o en caso de que su 
+cumpleaños ya haya ocurrido, el tiempo en días y meses que ha pasado desde entonces */
+
+const birthdayTime = () => {
+
+} 
+
+/* const differenceBirth = (arrayBirth) => {
+    let datesMiliseconds = arrayBirth.map((date) => parseInt(date.birthDate.split('/')[2]))
+    let ageDifferences = Math.max(...datesMiliseconds) - Math.min(...datesMiliseconds)
+    return ageDifferences
+}
+
+console.log(`La diferencia de años entre el koder más verde y el más experimentado es de ${differenceBirth(koders)} años`); */
+
