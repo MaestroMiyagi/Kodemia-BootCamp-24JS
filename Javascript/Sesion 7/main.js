@@ -255,25 +255,25 @@ let products = [{
 
 /* 1.- crear una función que me devuelva un producto específico basado en su id */
 
-/* const searchId = (idArray, idNumber) => {
+const searchId = (idArray, idNumber) => {
   let idResult = idArray.filter(idArray => idArray.id === idNumber)
   console.log(idResult)
   return idResult
 }
 
 let idResult = searchId(products, 20)
-console.log(idResult) */
+console.log(idResult) 
 
 /* 2.- crear una función que me entregue los productos con el mejor rating ( aquellos con más de 4 puntos de rating) */
 
-/* const searchRating = (products, rating) => {
+const searchRating = (products, rating) => {
   let ratingResult = products.filter(product => product.rating.rate >= rating)
   console.log(ratingResult)
   return ratingResult
 }
 
 let ratingResult = searchRating(products, 4)
-console.log(ratingResult) */
+console.log(ratingResult) 
 
 /* 3.- Crear una función que me devuelva una lista con los nombres de los productos y su costo en strings
     [
