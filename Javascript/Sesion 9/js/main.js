@@ -39,7 +39,7 @@ let koders = [{
     birthDate: "11/02/1999"
 }]
 
-document.addEventListener("DOMContentLoaded", function(event) {
+/* document.addEventListener("DOMContentLoaded", function(event) {
     const getTimeBeforeBirthday = (arrayKoders) => {
         let listUser = document.getElementById("birthday-list");
         let date = arrayKoders.map((item) => {
@@ -65,6 +65,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
       let result = getTimeBeforeBirthday(koders)
     console.log(result) 
-  });
+  }); */
 
-  
+let birthdaysElementTitle = document.createElement("h1");
+let birthdaysTextTitle = document.createTextNode("Tiempo faltante para el cumpleaños de los Koders G-24");
+let birthdaysTitle = birthdaysElementTitle.appendChild(birthdaysTextTitle);
+document.body.appendChild(birthdaysTitle);
+
+const birthdays = (kodersList) => {
+    let currentDate = Date.now();
+    let result = kodersList.map((koder) => {
+        let {name, birthDate} = koder
+        let birthDay = new Date[birthDate].getTime();
+        let timeDiff = birthDay - currentDate; /*milisegundos*/
+        let timeDiffInDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        let timeDiffInMonths = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30));
+        let leftoverDays = Math.floor(timeDiffInDays % 30.5);
+        let paragraph = document.createElement("p");
+        leftoverDays < 0 ? paragraph.innerHTML = `El cumpleaños de ${name} fue hace ${-timeDiffInMonths} meses y ${-leftoverDays} dias` : paragraph.innerHTML = `Faltan ${timeDiffInMonths} meses y ${leftoverDays} dias p document.body.appendChild(paragraph)`;
+        return result
+    })
+}
+
+birthdays(koders)
