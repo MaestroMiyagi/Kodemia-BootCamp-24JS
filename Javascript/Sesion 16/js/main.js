@@ -1,25 +1,29 @@
-import getProduct from "./api.js";
+import getInfo from "./api.js";
 import {productCard} from "./productCard.js";
 
+console.log( "todo ok")
 let carProducts = []
 
 const printProducts = async () => {
 
-    let response = await getProduct()
+    let response = await getInfo.productInfo()
+    console.log( response)
 
-    let productList = response["result"]
-
-    for (const key in productList) {
-        console.log(key)
+    response.forEach(product => {
         let {
             title,
             price,
             descriprion,
             category,
             image
-        } = productList[key]
-    }
-    let cards = productCard(title, price, descriprion, category, image)
-    divContent.appendChild(cards)
+        } = product
+        console.log( product)
+        let cards = productCard(title, price, descriprion, category, image)
+        document.getElementById("product-wrapper").appendChild(cards)
+    });
+    
+
     
 }
+
+printProducts()

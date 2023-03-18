@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var BASE_URL = "https://fakestoreapi.com/products";
+var BASE_URL = "https://kodemia-24g-default-rtdb.firebaseio.com/products/.json";
 var _default = {
-  productCard: function productCard() {
+  productInfo: function productInfo() {
     var response, data;
-    return regeneratorRuntime.async(function productCard$(_context) {
+    return regeneratorRuntime.async(function productInfo$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:

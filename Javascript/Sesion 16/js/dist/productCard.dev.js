@@ -30,6 +30,9 @@ var productCard = function productCard(productName, productPrice, productImage, 
   category.classList.add("text-succes");
   var categoryText = document.createTextNode(productCategory);
   category.appendChild(categoryText);
+  secondaryDiv.appendChild(title, content, anchor, category);
+  principalDiv.appendChild(principalImage, secondaryDiv);
+  return principalDiv;
 };
 
 exports.productCard = productCard;

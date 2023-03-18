@@ -1,7 +1,7 @@
-let BASE_URL = `https://fakestoreapi.com/products`;
+let BASE_URL = `https://kodemia-24g-default-rtdb.firebaseio.com/products/.json`;
 
 export default {
-    productCard: async () => {
+    productInfo: async () => {
         let response = await fetch(`${BASE_URL}`);
 
         let data = await response.json();

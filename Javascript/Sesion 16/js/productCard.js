@@ -1,6 +1,7 @@
 const productCard = (productName, productPrice, productImage, productDescription, productCategory) => {
     let principalDiv = document.createElement("div")
     principalDiv.classList.add("card","col-sm-4","mt-3")
+
     
     let principalImage = document.createElement("img")
     principalImage.classList.add("card-image-top")
@@ -29,6 +30,12 @@ const productCard = (productName, productPrice, productImage, productDescription
     category.classList.add("text-succes")
     let categoryText = document.createTextNode(productCategory)
     category.appendChild(categoryText)
+
+    secondaryDiv.appendChild(title, content, anchor, category)
+    principalDiv.appendChild(principalImage, secondaryDiv)
+
+
+    return principalDiv
 }
 
 export {productCard}
