@@ -24,11 +24,11 @@ var printProducts = function printProducts() {
           response.forEach(function (product) {
             var title = product.title,
                 price = product.price,
-                descriprion = product.descriprion,
+                description = product.description,
                 category = product.category,
                 image = product.image;
             console.log(product);
-            var cards = (0, _productCard.productCard)(title, price, descriprion, category, image);
+            var cards = (0, _productCard.productCard)(title, price, image, description, category);
             document.getElementById("product-wrapper").appendChild(cards);
           });
 
@@ -38,6 +38,12 @@ var printProducts = function printProducts() {
       }
     }
   });
+};
+
+var getProduct = function getProduct() {
+  var response = _api["default"].productInfo();
+
+  response.find(product);
 };
 
 printProducts();

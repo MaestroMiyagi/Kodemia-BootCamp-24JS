@@ -7,9 +7,9 @@ exports.productCard = void 0;
 
 var productCard = function productCard(productName, productPrice, productImage, productDescription, productCategory) {
   var principalDiv = document.createElement("div");
-  principalDiv.classList.add("card", "col-sm-4", "mt-3");
+  principalDiv.classList.add("card", "col-md-3", "mt-3");
   var principalImage = document.createElement("img");
-  principalImage.classList.add("card-image-top");
+  principalImage.classList.add("card-image-top", "m-2");
   principalImage.setAttribute("src", productImage);
   var secondaryDiv = document.createElement("div");
   secondaryDiv.classList.add("card-body");
@@ -30,8 +30,8 @@ var productCard = function productCard(productName, productPrice, productImage, 
   category.classList.add("text-succes");
   var categoryText = document.createTextNode(productCategory);
   category.appendChild(categoryText);
-  secondaryDiv.appendChild(title, content, anchor, category);
-  principalDiv.appendChild(principalImage, secondaryDiv);
+  secondaryDiv.append(title, content, anchor, category);
+  principalDiv.append(principalImage, secondaryDiv);
   return principalDiv;
 };
 
