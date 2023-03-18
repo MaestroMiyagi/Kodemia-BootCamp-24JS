@@ -26,9 +26,10 @@ var printProducts = function printProducts() {
                 price = product.price,
                 description = product.description,
                 category = product.category,
-                image = product.image;
+                image = product.image,
+                id = product.id;
             console.log(product);
-            var cards = (0, _productCard.productCard)(title, price, image, description, category);
+            var cards = (0, _productCard.productCard)(title, price, image, description, category, id, getProduct);
             document.getElementById("product-wrapper").appendChild(cards);
           });
 
@@ -40,10 +41,30 @@ var printProducts = function printProducts() {
   });
 };
 
-var getProduct = function getProduct() {
-  var response = _api["default"].productInfo();
+var getProduct = function getProduct(productId) {
+  var response, product;
+  return regeneratorRuntime.async(function getProduct$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return regeneratorRuntime.awrap(_api["default"].productInfo());
 
-  response.find(product);
+        case 2:
+          response = _context2.sent;
+          console.log(response);
+          product = response.find(function (product) {
+            return product.id === productId;
+          });
+          product ? carProducts.push(product) : null;
+          console.log(carProducts);
+
+        case 7:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  });
 };
 
 printProducts();

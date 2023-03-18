@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.productCard = void 0;
 
-var productCard = function productCard(productName, productPrice, productImage, productDescription, productCategory) {
+var productCard = function productCard(productName, productPrice, productImage, productDescription, productCategory, productId, buttonFunction) {
   var principalDiv = document.createElement("div");
   principalDiv.classList.add("card", "col-md-3", "mt-3");
   var principalImage = document.createElement("img");
@@ -26,6 +26,9 @@ var productCard = function productCard(productName, productPrice, productImage, 
   var anchorText = document.createTextNode("Compra por tan solo $".concat(productPrice));
   anchor.setAttribute("type", "button");
   anchor.appendChild(anchorText);
+  anchor.addEventListener("click", function () {
+    return buttonFunction(productId);
+  });
   var category = document.createElement("small");
   category.classList.add("text-succes");
   var categoryText = document.createTextNode(productCategory);

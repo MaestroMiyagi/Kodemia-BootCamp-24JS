@@ -17,17 +17,23 @@ const printProducts = async () => {
             price,
             description,
             category,
-            image
+            image,
+            id
         } = product
         console.log(product)
-        let cards = productCard(title, price, image, description, category)
+        let cards = productCard(title, price, image, description, category, id, getProduct)
         document.getElementById("product-wrapper").appendChild(cards)
     });
 }
 
-const getProduct = () => {
-    let response = getInfo.productInfo()
-    response.find((product) => )
+const getProduct = async (productId) => {
+    let response = await getInfo.productInfo()
+    console.log(response)
+    let product = response.find(product => product.id === productId)
+    product ? carProducts.push(product) : null
+    console.log(carProducts)
+
 }
+
 
 printProducts()

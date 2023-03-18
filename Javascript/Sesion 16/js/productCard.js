@@ -1,4 +1,4 @@
-const productCard = (productName, productPrice, productImage, productDescription, productCategory) => {
+const productCard = (productName, productPrice, productImage, productDescription, productCategory, productId, buttonFunction) => {
     let principalDiv = document.createElement("div")
     principalDiv.classList.add("card","col-md-3", "mt-3")
 
@@ -25,6 +25,7 @@ const productCard = (productName, productPrice, productImage, productDescription
     let anchorText = document.createTextNode(`Compra por tan solo $${productPrice}`)
     anchor.setAttribute("type", "button")
     anchor.appendChild(anchorText)
+    anchor.addEventListener(`click`, () => buttonFunction(productId))
 
     let category = document.createElement("small")
     category.classList.add("text-succes")
