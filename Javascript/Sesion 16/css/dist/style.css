@@ -1,3 +1,8 @@
 body {
   font-family: "Ubuntu", sans-serif;
+  background: linear-gradient(to bottom, #ADD8E6, #FFFFFF, #D3D3D3);
+}
+
+footer div {
+  background-color: rgba(0, 0, 0, 0.2);
 }

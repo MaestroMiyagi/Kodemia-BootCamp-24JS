@@ -1,6 +1,6 @@
 const productCard = (productName, productPrice, productImage, productDescription, productCategory, productId, buttonFunction) => {
     let principalDiv = document.createElement("div")
-    principalDiv.classList.add("card","col-3", "mt-3")
+    principalDiv.classList.add("card","col-3", "mt-3", "mb-5", "ms-5", "border-dark")
 
 
     let principalImage = document.createElement("img")

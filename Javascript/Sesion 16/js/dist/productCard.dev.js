@@ -7,7 +7,7 @@ exports.productCard = void 0;
 
 var productCard = function productCard(productName, productPrice, productImage, productDescription, productCategory, productId, buttonFunction) {
   var principalDiv = document.createElement("div");
-  principalDiv.classList.add("card", "col-md-3", "mt-3");
+  principalDiv.classList.add("card", "col-3", "mt-3", "mb-5", "ms-5", "border-dark");
   var principalImage = document.createElement("img");
   principalImage.classList.add("card-image-top", "m-2");
   principalImage.setAttribute("src", productImage);
