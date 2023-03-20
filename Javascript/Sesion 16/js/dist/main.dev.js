@@ -4,6 +4,8 @@ var _api = _interopRequireDefault(require("./api.js"));
 
 var _productCard = require("./productCard.js");
 
+var _cart = require("./cart.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 console.log("todo ok");
@@ -42,7 +44,7 @@ var printProducts = function printProducts() {
 };
 
 var getProduct = function getProduct(productId) {
-  var response, product;
+  var response, product, carTable;
   return regeneratorRuntime.async(function getProduct$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -57,25 +59,17 @@ var getProduct = function getProduct(productId) {
             return product.id === productId;
           });
           product ? carProducts.push(product) : null;
-          printCar(carProducts);
+          (0, _cart.printCar)(carProducts);
           total(carProducts);
-          console.log(carProducts);
+          carTable = (0, _cart.printCar)(carProducts);
+          document.querySelector("#cart-wrapper").innerHTML = "";
+          document.querySelector("#cart-wrapper").appendChild(carTable);
 
-        case 9:
+        case 11:
         case "end":
           return _context2.stop();
       }
     }
-  });
-};
-
-var printCar = function printCar(carArray) {
-  carArray.forEach(function (product) {
-    var title = product.title,
-        price = product.price,
-        image = product.image;
-    var carCard = (0, _productCard.productCard)(title, price, image);
-    document.getElementById("cart-wrapper").appendChild(carCard);
   });
 };
 

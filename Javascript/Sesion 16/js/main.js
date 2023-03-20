@@ -2,6 +2,9 @@ import getInfo from "./api.js";
 import {
     productCard
 } from "./productCard.js";
+import {
+    printCar
+} from "./cart.js";
 
 console.log("todo ok")
 let carProducts = []
@@ -33,24 +36,17 @@ const getProduct = async (productId) => {
     product ? carProducts.push(product) : null
     printCar(carProducts)
     total(carProducts)
-    console.log(carProducts)
-
+    const carTable = printCar(carProducts);
+    document.querySelector("#cart-wrapper").innerHTML = "";
+    document.querySelector("#cart-wrapper").appendChild(carTable);
 }
 
-const printCar = (carArray) => {
-    carArray.forEach((product) => {
-      let { title, price, image } = product;
-      let carCard = productCard(title, price, image);
-      document.getElementById("cart-wrapper").appendChild(carCard);
-    });
-  };
-  
-  const total = (payArray) => {
+const total = (payArray) => {
     payArray.reduce((acum, current) => {
-      let totalPrice = (acum += current.price);
-      console.log(totalPrice);
-      return totalPrice;
+        let totalPrice = (acum += current.price);
+        console.log(totalPrice);
+        return totalPrice;
     });
-  };
+};
 
 printProducts()
