@@ -57,13 +57,33 @@ var getProduct = function getProduct(productId) {
             return product.id === productId;
           });
           product ? carProducts.push(product) : null;
+          printCar(carProducts);
+          total(carProducts);
           console.log(carProducts);
 
-        case 7:
+        case 9:
         case "end":
           return _context2.stop();
       }
     }
+  });
+};
+
+var printCar = function printCar(carArray) {
+  carArray.forEach(function (product) {
+    var title = product.title,
+        price = product.price,
+        image = product.image;
+    var carCard = (0, _productCard.productCard)(title, price, image);
+    document.getElementById("cart-wrapper").appendChild(carCard);
+  });
+};
+
+var total = function total(payArray) {
+  payArray.reduce(function (acum, current) {
+    var totalPrice = acum += current.price;
+    console.log(totalPrice);
+    return totalPrice;
   });
 };
 
