@@ -54,18 +54,16 @@ var getProduct = function getProduct(productId) {
 
         case 2:
           response = _context2.sent;
-          console.log(response);
           product = response.find(function (product) {
             return product.id === productId;
           });
           product ? carProducts.push(product) : null;
-          (0, _cart.printCar)(carProducts);
-          total(carProducts);
           carTable = (0, _cart.printCar)(carProducts);
           document.querySelector("#cart-wrapper").innerHTML = "";
           document.querySelector("#cart-wrapper").appendChild(carTable);
+          total(carProducts);
 
-        case 11:
+        case 9:
         case "end":
           return _context2.stop();
       }
@@ -74,11 +72,15 @@ var getProduct = function getProduct(productId) {
 };
 
 var total = function total(payArray) {
-  payArray.reduce(function (acum, current) {
-    var totalPrice = acum += current.price;
-    console.log(totalPrice);
-    return totalPrice;
-  });
+  var totalPrice = payArray.reduce(function (acum, current) {
+    return acum + current.price;
+  }, 0);
+  var totalRow = document.createElement("tr");
+  var totalCell = document.createElement("td");
+  totalCell.setAttribute("colspan", "4");
+  totalCell.innerHTML = "Total: $".concat(totalPrice);
+  totalRow.appendChild(totalCell);
+  document.querySelector("#cart-wrapper").appendChild(totalRow);
 };
 
 printProducts();

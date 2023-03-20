@@ -31,22 +31,22 @@ const printProducts = async () => {
 
 const getProduct = async (productId) => {
     let response = await getInfo.productInfo()
-    console.log(response)
     let product = response.find((product) => product.id === productId)
     product ? carProducts.push(product) : null
-    printCar(carProducts)
-    total(carProducts)
     const carTable = printCar(carProducts);
     document.querySelector("#cart-wrapper").innerHTML = "";
     document.querySelector("#cart-wrapper").appendChild(carTable);
+    total(carProducts)
 }
 
 const total = (payArray) => {
-    payArray.reduce((acum, current) => {
-        let totalPrice = (acum += current.price);
-        console.log(totalPrice);
-        return totalPrice;
-    });
+    const totalPrice = payArray.reduce((acum, current) => acum + current.price, 0);
+    const totalRow = document.createElement("tr");
+    const totalCell = document.createElement("td");
+    totalCell.setAttribute("colspan", "4");
+    totalCell.innerHTML = `Total: $${totalPrice}`;
+    totalRow.appendChild(totalCell);
+    document.querySelector("#cart-wrapper").appendChild(totalRow);
 };
 
 printProducts()
