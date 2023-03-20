@@ -1,6 +1,6 @@
 const printCar = (carArray) => {
     const carTable = document.createElement("table");
-    carTable.classList.add("table", "caption-top");
+    carTable.classList.add("table", "caption-top", "bg-light", "rounded", "mt-2" );
     const carTableHead = document.createElement("thead");
     const carTableHeadRow = document.createElement("tr");
     const carTableHeadQuantity = document.createElement("th");
@@ -69,3 +69,4 @@ const printCar = (carArray) => {
 export {
     printCar
 }
+

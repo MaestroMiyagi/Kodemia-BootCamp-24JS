@@ -78,6 +78,7 @@ var total = function total(payArray) {
   var totalRow = document.createElement("tr");
   var totalCell = document.createElement("td");
   totalCell.setAttribute("colspan", "4");
+  totalCell.classList.add("bg-ligth");
   totalCell.innerHTML = "Total: $".concat(totalPrice);
   totalRow.appendChild(totalCell);
   document.querySelector("#cart-wrapper").appendChild(totalRow);

@@ -44,6 +44,7 @@ const total = (payArray) => {
     const totalRow = document.createElement("tr");
     const totalCell = document.createElement("td");
     totalCell.setAttribute("colspan", "4");
+    totalCell.classList.add("bg-ligth")
     totalCell.innerHTML = `Total: $${totalPrice}`;
     totalRow.appendChild(totalCell);
     document.querySelector("#cart-wrapper").appendChild(totalRow);

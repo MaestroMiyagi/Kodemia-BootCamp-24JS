@@ -7,7 +7,7 @@ exports.printCar = void 0;
 
 var printCar = function printCar(carArray) {
   var carTable = document.createElement("table");
-  carTable.classList.add("table", "caption-top");
+  carTable.classList.add("table", "caption-top", "bg-light", "rounded", "mt-2");
   var carTableHead = document.createElement("thead");
   var carTableHeadRow = document.createElement("tr");
   var carTableHeadQuantity = document.createElement("th");
