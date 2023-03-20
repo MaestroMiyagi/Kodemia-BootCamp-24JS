@@ -23,7 +23,7 @@ var productCard = function productCard(productName, productPrice, productImage, 
   content.appendChild(textContent);
   var anchor = document.createElement("button");
   anchor.classList.add("btn", "btn-primary", "btn-lg");
-  var anchorText = document.createTextNode("Compra por tan solo $".concat(productPrice));
+  var anchorText = document.createTextNode("Compra por tan solo $".concat(Math.round(productPrice)));
   anchor.setAttribute("type", "button");
   anchor.appendChild(anchorText);
   anchor.addEventListener("click", function () {

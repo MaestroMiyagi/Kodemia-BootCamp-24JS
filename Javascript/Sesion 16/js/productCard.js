@@ -22,7 +22,7 @@ const productCard = (productName, productPrice, productImage, productDescription
 
     let anchor = document.createElement("button")
     anchor.classList.add("btn", "btn-primary", "btn-lg")
-    let anchorText = document.createTextNode(`Compra por tan solo $${productPrice}`)
+    let anchorText = document.createTextNode(`Compra por tan solo $${Math.round(productPrice)}`)
     anchor.setAttribute("type", "button")
     anchor.appendChild(anchorText)
     anchor.addEventListener(`click`, () => buttonFunction(productId))

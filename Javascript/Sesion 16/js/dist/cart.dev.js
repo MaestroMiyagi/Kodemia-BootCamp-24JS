@@ -57,9 +57,9 @@ var printCar = function printCar(carArray) {
     var productName = document.createElement("td");
     productName.innerHTML = title;
     var productPrice = document.createElement("td");
-    productPrice.innerHTML = "$".concat(price);
+    productPrice.innerHTML = "$".concat(Math.round(price));
     var productTotal = document.createElement("td");
-    productTotal.innerHTML = "$".concat(price * cantidad);
+    productTotal.innerHTML = "$".concat(Math.round(price * cantidad));
     productRow.append(productQuantity, productName, productPrice, productTotal);
     carTableBody.append(productRow);
   });

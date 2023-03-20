@@ -77,11 +77,22 @@ var total = function total(payArray) {
   }, 0);
   var totalRow = document.createElement("tr");
   var totalCell = document.createElement("td");
+  var buyButton = document.createElement("button");
+  buyButton.classList.add("bg-primary");
   totalCell.setAttribute("colspan", "4");
-  totalCell.classList.add("bg-ligth");
-  totalCell.innerHTML = "Total: $".concat(totalPrice);
-  totalRow.appendChild(totalCell);
+  var totalPriceText = "Comprar \n Total: $".concat(Math.round(totalPrice));
+  var buyButtonText = document.createTextNode(totalPriceText);
+  buyButton.appendChild(buyButtonText);
+  buyButton.addEventListener('click', function () {
+    alert('Gracias por tu compra'), deleteCart();
+  });
+  totalRow.appendChild(buyButton);
   document.querySelector("#cart-wrapper").appendChild(totalRow);
+};
+
+var deleteCart = function deleteCart() {
+  document.querySelector("#cart-wrapper").innerHTML = "";
+  carProducts = [];
 };
 
 printProducts();

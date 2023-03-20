@@ -55,9 +55,9 @@ const printCar = (carArray) => {
         const productName = document.createElement("td");
         productName.innerHTML = title;
         const productPrice = document.createElement("td");
-        productPrice.innerHTML = `$${price}`;
+        productPrice.innerHTML = `$${Math.round(price)}`;
         const productTotal = document.createElement("td");
-        productTotal.innerHTML = `$${price * cantidad}`;
+        productTotal.innerHTML = `$${Math.round(price * cantidad)}`;
         productRow.append(productQuantity, productName, productPrice, productTotal);
         carTableBody.append(productRow);
     });
