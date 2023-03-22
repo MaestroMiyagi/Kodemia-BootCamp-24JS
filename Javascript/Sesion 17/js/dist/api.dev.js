@@ -38,7 +38,7 @@ var _default = {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return regeneratorRuntime.awrap(fetch("".concat(URL).concat(id)));
+            return regeneratorRuntime.awrap(fetch("".concat(URL, "/").concat(id)));
 
           case 2:
             response = _context2.sent;

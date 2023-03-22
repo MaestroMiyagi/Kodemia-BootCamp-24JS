@@ -1,4 +1,5 @@
 import api from "./api.js"
+import {myDetailCards} from "./cards.js"
 
 /*let post =  {
     textCards: async () => {
@@ -20,7 +21,15 @@ let id = urlParams.get("id")
 const selectPost = async () => {
     let postId = await api.getPostById(id)
     console.log("Hola")
-    return postId
+    postId.forEach(item => {
+        let {
+            id,
+            title,
+            body
+        } = item
+        let cards = myDetailCards(id, title, body)
+        document.getElementById("cardContainer").appendChild(cards)
+    })
 
 }
 

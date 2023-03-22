@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.myCards = void 0;
+exports.myDetailCards = exports.myCards = void 0;
 
 var myCards = function myCards(id, title, body) {
   var card = document.createElement('div');
@@ -24,3 +24,21 @@ var myCards = function myCards(id, title, body) {
 };
 
 exports.myCards = myCards;
+
+var myDetailCards = function myDetailCards(id, title, body) {
+  var card = document.createElement('div');
+  card.classList.add('card');
+  var cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+  var cardTitle = document.createElement('h1');
+  cardTitle.classList.add('card-title');
+  cardTitle.innerHTML = title;
+  var cardText = document.createElement('p');
+  cardText.classList.add('card-text');
+  cardText.innerHTML = body;
+  cardBody.append(cardTitle);
+  card.append(cardBody);
+  return card;
+};
+
+exports.myDetailCards = myDetailCards;

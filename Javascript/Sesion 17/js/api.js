@@ -7,7 +7,7 @@ export default {
         return data
     },
     getPostById: async (id) => {
-        let response = await fetch(`${URL}${id}`)
+        let response = await fetch(`${URL}/${id}`)
         let data = await response.json()
         return data
     }
