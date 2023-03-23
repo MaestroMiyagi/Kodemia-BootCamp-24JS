@@ -2,37 +2,44 @@
 
 var _api = _interopRequireDefault(require("./api.js"));
 
-var _cards = require("./cards.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/*let post =  {
+    textCards: async () => {
+        let response = await fetch(`${URL}`)
+        let data = await response.json()
+        return data
+    },
+    getPostById: async (id) => {
+        let response = await fetch(`${URL}${id}`)
+        let data = await response.json()
+        return data
+    }
+}*/
 var urlParams = new URLSearchParams(window.location.search);
-var id = urlParams.get("id");
+var idSelector = urlParams.get("id");
 
 var selectPost = function selectPost() {
-  var postId;
+  var postId, id, title, body;
   return regeneratorRuntime.async(function selectPost$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(_api["default"].getPostById(id));
+          return regeneratorRuntime.awrap(_api["default"].getPostById(idSelector));
 
         case 2:
           postId = _context.sent;
-          console.log("Hola");
-          postId.forEach(function (item) {
-            var id = item.id,
-                title = item.title,
-                body = item.body;
-            var cards = (0, _cards.myDetailCards)(id, title, body);
-            document.getElementById("cardContainer").appendChild(cards);
-          });
+          id = postId.id, title = postId.title, body = postId.body;
+          document.getElementById("cardTitle").innerText = title;
+          document.getElementById("cardBody").innerText = body;
 
-        case 5:
+        case 6:
         case "end":
           return _context.stop();
       }
     }
   });
 };
+
+selectPost();

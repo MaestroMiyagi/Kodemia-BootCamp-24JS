@@ -1,6 +1,4 @@
 import api from "./api.js"
-import {myDetailCards} from "./cards.js"
-import {myDetailCards} from "./cards.js"
 
 /*let post =  {
     textCards: async () => {
@@ -16,20 +14,18 @@ import {myDetailCards} from "./cards.js"
 }*/
 
 let urlParams = new URLSearchParams (window.location.search);
-let id = urlParams.get("id")
+let idSelector = urlParams.get("id")
 
 
 const selectPost = async () => {
-    let postId = await api.getPostById(id)
-    console.log("Hola")
-    postId.forEach(item => {
-        let {
+    let postId = await api.getPostById(idSelector)
+    let {
             id,
             title,
             body
-        } = item
-        let cards = myDetailCards(id, title, body)
-        document.getElementById("cardContainer").appendChild(cards)
-    })
-
+        } = postId
+        document.getElementById("cardTitle").innerText = title
+        document.getElementById("cardBody").innerText = body
 }
+
+selectPost()
