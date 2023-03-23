@@ -1,5 +1,6 @@
 import api from "./api.js"
 import {myDetailCards} from "./cards.js"
+import {myDetailCards} from "./cards.js"
 
 /*let post =  {
     textCards: async () => {
